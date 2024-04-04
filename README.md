@@ -1,4 +1,7 @@
 # SliceBite Bakery Website
+By 3rd Team
+![lorem](https://github.com/Rizkuy01/SliceBite/assets/115411913/20e53fb6-ace8-4b67-b0d7-75bfc71bfe8d)
+
 
 Welcome to SlicesBite!
 Where every bite is a journey and every crumb tells a story. Dive into a world of freshly baked goodness, where warmth meets flavor in every slice. From classic loaves to indulgent pastries, we bake with passion to satisfy your cravings and sweeten your day.
