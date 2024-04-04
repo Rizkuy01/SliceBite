@@ -41,6 +41,4 @@ To set up the SliceBite Bakery website locally, follow these steps:
 
 We welcome contributions from the community to improve SliceBite Bakery website. If you have any suggestions, bug fixes, or feature enhancements, feel free to open an issue or submit a pull request.
 
-## License
-
-This project is licensed under the [MIT License](LICENSE).
+author: rizkysaputraa2004@gmail.com
