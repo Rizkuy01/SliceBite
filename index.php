@@ -75,7 +75,7 @@
           <a href="#contact" class="nav-item nav-link">Contact</a>
         </div>
         <a
-          href="product-cart.html"
+          href="product-cart.php"
           class="nav-item nav-link d-flex align-items-center"
         >
           <i class="fas fa-shopping-cart"></i> Cart
@@ -197,7 +197,7 @@
                 <div class="product-overlay">
                   <a
                     class="btn btn-lg-square btn-outline-light rounded-circle"
-                    href="product-cart.html"
+                    href="product-cart.php"
                     data-price="25.000"
                     ><i class="fa fa-eye text-primary"></i
                   ></a>
@@ -226,7 +226,7 @@
                 <div class="product-overlay">
                   <a
                     class="btn btn-lg-square btn-outline-light rounded-circle"
-                    href="product-cart.html"
+                    href="product-cart.php"
                     data-price="18.000"
                     ><i class="fa fa-eye text-primary"></i
                   ></a>
@@ -255,7 +255,7 @@
                 <div class="product-overlay">
                   <a
                     class="btn btn-lg-square btn-outline-light rounded-circle"
-                    href="product-cart.html"
+                    href="product-cart.php"
                     data-price="20.000"
                     ><i class="fa fa-eye text-primary"></i
                   ></a>

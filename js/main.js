@@ -94,45 +94,45 @@
     $(document).ready(function () {
         // Add to cart
         $(".add-to-cart").click(function (e) {
-          e.preventDefault();
-          var price = parseFloat($(this).data("price"));
-          var itemName = $(this).closest(".product-item").find("h3").text();
-          var formattedPrice = price.toFixed(3);
-          $("#cart-items").append(
-            '<li class="list-group-item">' +
-              itemName +
-              " - Rp" +
-              formattedPrice +
-              '<button class="btn btn-sm btn-danger mx-4 remove-item">Remove</button></li>'
-          );
-          var total = parseFloat($("#cart-total").text());
-          $("#cart-total").text((total + price).toFixed(3));
+        e.preventDefault();
+            var price = parseFloat($(this).data("price"));
+            var itemName = $(this).closest(".product-item").find("h3").text();
+            var formattedPrice = price.toFixed(3);
+            $("#cart-items").append(
+                '<li class="list-group-item">' +
+                itemName +
+                " - Rp" +
+                formattedPrice +
+                '<button class="btn btn-sm btn-danger mx-4 remove-item">Remove</button></li>'
+            );
+            var total = parseFloat($("#cart-total").text());
+            $("#cart-total").text((total + price).toFixed(3));
         });
 
         // Remove item
         $("#cart-items").on("click", ".remove-item", function () {
-          var removedItemPrice = parseFloat(
-            $(this)
-              .closest("li")
-              .text()
-              .match(/Rp(\d+(\.\d{3})*)/)[1]
-          );
-          var total = parseFloat($("#cart-total").text());
-          $(this).closest("li").remove();
-          $("#cart-total").text((total - removedItemPrice).toFixed(3));
+            var removedItemPrice = parseFloat(
+                $(this)
+                .closest("li")
+                .text()
+                .match(/Rp(\d+(\.\d{3})*)/)[1]
+            );
+            var total = parseFloat($("#cart-total").text());
+            $(this).closest("li").remove();
+            $("#cart-total").text((total - removedItemPrice).toFixed(3));
         });
 
         // Checkout button
         $(".checkout").click(function () {
-          var total = $("#cart-total").text();
-          Swal.fire({
-            title: "Total Price's:",
-            text: "Rp " + total,
-            icon: "success",
-            confirmButtonText: "OK",
-          });
+            var total = $("#cart-total").text();
+            Swal.fire({
+                title: "Total Price's:",
+                text: "Rp " + total,
+                icon: "success",
+                confirmButtonText: "OK",
+            });
+            });
         });
-      });
     
 })(jQuery);
 

@@ -75,7 +75,7 @@
           <a hidden href="#contact" class="nav-item nav-link">Contact</a>
         </div>
         <a
-          href="product-cart.html"
+          href="product-cart.php"
           class="nav-item nav-link d-flex align-items-center"
         >
           <i class="fas fa-shopping-cart"></i> Cart
