@@ -55,7 +55,7 @@
       class="navbar navbar-expand-lg navbar-dark fixed-top py-lg-0 px-lg-5 wow fadeIn"
       data-wow-delay="0.1s"
     >
-      <a href="index.html" class="navbar-brand ms-4 ms-lg-0">
+      <a href="index.php" class="navbar-brand ms-4 ms-lg-0">
         <h1 class="text-primary m-0">SliceBite</h1>
       </a>
       <button
@@ -101,6 +101,7 @@
     <div class="container-xxl bg-light my-6 py-6 pt-0" id="product">
   <div class="container">
     <div class="row justify-content-center">
+
       <!-- Cart Section -->
       <!-- <div class="col-lg-6 mt-4">
         <div class="card mb-5">
@@ -115,6 +116,7 @@
         </div>
       </div> -->
       <!-- Cart End -->
+      
     </div>
 
     <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 500px">

@@ -91,8 +91,30 @@
     </div>
     <!-- Page Header End -->
 
-    <!-- button start-->
-    <!-- button end-->
+    <!-- Cards Section Start -->
+    <div class="container py-5">
+      <div class="row justify-content-center">
+        <div class="col-lg-4 mb-4">
+          <div class="card text-center h-100">
+            <div class="card-body">
+              <i class="bi bi-box-seam display-1 text-primary"></i>
+              <h5 class="card-title mt-3">Product Dashboard</h5>
+              <a href="product-dashboard.php" class="btn btn-primary mt-2">Go to Product Dashboard</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 mb-4">
+          <div class="card text-center h-100">
+            <div class="card-body">
+              <i class="bi bi-receipt display-1 text-primary"></i>
+              <h5 class="card-title mt-3">Transaction Dashboard</h5>
+              <a href="transaction-dashboard.php" class="btn btn-primary mt-2">Go to Transaction Dashboard</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Cards Section End -->
 
     <!-- Footer Start -->
     <div
