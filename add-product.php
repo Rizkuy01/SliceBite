@@ -52,7 +52,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     VALUES ('$productName', '$productPrice', '$productQuantity', '$target_file')";
 
             if ($conn->query($sql) === TRUE) {
-                echo "New record created successfully";
+                // Redirect ke halaman product-cart.php
+                header("Location: product-dashboard.php");
+                exit();
             } else {
                 echo "Error: " . $sql . "<br>" . $conn->error;
             }
@@ -62,4 +64,3 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
     $conn->close();
 }
-?>

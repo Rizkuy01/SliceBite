@@ -31,10 +31,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $sql = "INSERT INTO checkout (name, phone, address, payment, product, price, time) VALUES ('$name', '$phone', '$address', '$payment',  '$product', '$price', '$time')";
 
   if ($conn->query($sql) === TRUE) {
-    echo "Checkout berhasil!";
-  } else {
-    echo "Error: " . $sql . "<br>" . $conn->error;
-  }
+    header("Location: checkout-success.php");
+    exit();
+} else {
+    // Mengirimkan respons JSON jika terjadi kesalahan
+    echo json_encode(['success' => false, 'message' => 'Checkout gagal, silakan coba lagi']);
+}
 
   $conn->close();
 
@@ -42,4 +44,3 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 //   header("Location: checkout_success.php");
 //   exit;
 }
-?>

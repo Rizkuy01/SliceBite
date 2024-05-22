@@ -123,15 +123,40 @@
         });
 
         // Checkout button
-        $(".checkout").click(function () {
-            var total = $("#cart-total").text();
-            Swal.fire({
-                title: "Total Price's:",
-                text: "Rp " + total,
-                icon: "success",
-                confirmButtonText: "OK",
+        $('#checkoutForm').on('submit', function(event) {
+            event.preventDefault(); // Mencegah form dari pengiriman default
+            $.ajax({
+                url: 'checkout.php',
+                type: 'POST',
+                data: $(this).serialize(),
+                success: function(response) {
+                    const res = JSON.parse(response);
+                    if (res.success) {
+                        Swal.fire({
+                            icon: 'success',
+                            title: 'Checkout Berhasil!',
+                            text: res.message
+                        }).then(() => {
+                            // Optional: Close modal after successful alert
+                            $('#checkoutModal').modal('hide');
+                        });
+                    } else {
+                        Swal.fire({
+                            icon: 'error',
+                            title: 'Checkout Gagal',
+                            text: res.message
+                        });
+                    }
+                },
+                error: function() {
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Terjadi Kesalahan',
+                        text: 'Terjadi kesalahan saat memproses checkout. Silakan coba lagi.'
+                    });
+                }
             });
-            });
+        });
         });
     
 })(jQuery);

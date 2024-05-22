@@ -123,166 +123,48 @@
       <h1 class="display-8 mb-4 pt-4">Our Product</h1>
     </div>
 
-    <div class="row">
-      <!-- product 1 -->
-      <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-        <div class="product-item d-flex flex-column bg-white rounded overflow-hidden h-100">
-          <div class="text-center p-4">
-            <div class="d-inline-block border border-primary rounded-pill px-3 mb-3">
-              Rp25.000
+    <?php
+require_once 'conn.php';
+
+// Query untuk mengambil data produk
+$sql = "SELECT Name_Product, Price, qty, image FROM product";
+$result = $conn->query($sql);
+?>
+
+<div class="row">
+<?php
+if ($result->num_rows > 0) {
+    // Output data dari setiap baris
+    while($row = $result->fetch_assoc()) {
+        ?>
+        <div class="col-lg-3 col-md-6 wow fadeInUp pb-lg-4" data-wow-delay="0.1s">
+            <div class="product-item d-flex flex-column bg-white rounded overflow-hidden h-100">
+                <div class="text-center p-4">
+                  <h3 class="mb-3"><?php echo htmlspecialchars($row["Name_Product"]); ?></h3>
+                    <div class="d-inline-block border border-primary rounded-pill px-3 mb-3">
+                        Rp<?php echo number_format($row["Price"], 0, ',', '.'); ?>
+                    </div>
+                </div>
+                <div class="position-relative mt-auto">
+                    <img class="img-fluid" src="<?php echo htmlspecialchars($row["image"]); ?>" alt="<?php echo htmlspecialchars($row["Name_Product"]); ?>" />
+                    <div class="product-overlay">
+                        <a class="btn btn-lg-square btn-outline-light rounded-circle add-to-cart" href="#" data-price="<?php echo number_format($row["Price"], 0, ',', '.'); ?>">
+                            <i class="fa fa-cart-plus text-primary"></i>
+                        </a>
+                    </div>
+                </div>
             </div>
-            <h3 class="mb-3">Cromboloni</h3>
-          </div>
-          <div class="position-relative mt-auto">
-            <img class="img-fluid" src="img/cromboloni.png" alt="" />
-            <div class="product-overlay">
-              <a class="btn btn-lg-square btn-outline-light rounded-circle add-to-cart" href="#" data-price="25.000">
-                <i class="fa fa-cart-plus text-primary"></i>
-              </a>
-            </div>
-          </div>
         </div>
-      </div>
-      <!-- product 2 -->
-      <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-        <div class="product-item d-flex flex-column bg-white rounded overflow-hidden h-100">
-          <div class="text-center p-4">
-            <div class="d-inline-block border border-primary rounded-pill pt-1 px-3 mb-3">
-              Rp18.000
-            </div>
-            <h3 class="mb-3">Croissant</h3>
-          </div>
-          <div class="position-relative mt-auto">
-            <img class="img-fluid" src="img/croissant.png" alt="" />
-            <div class="product-overlay">
-              <a class="btn btn-lg-square btn-outline-light rounded-circle add-to-cart" href="#" data-price="18.000">
-                <i class="fa fa-cart-plus text-primary"></i>
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- product 3 -->
-      <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-        <div class="product-item d-flex flex-column bg-white rounded overflow-hidden h-100">
-          <div class="text-center p-4">
-            <div class="d-inline-block border border-primary rounded-pill px-3 mb-3">
-              Rp14.000
-            </div>
-            <h3 class="mb-3">Croffle</h3>
-          </div>
-          <div class="position-relative mt-auto">
-            <img class="img-fluid" src="img/croffle.png" alt="" />
-            <div class="product-overlay">
-              <a class="btn btn-lg-square btn-outline-light rounded-circle add-to-cart" href="#" data-price="14.000">
-                <i class="fa fa-cart-plus text-primary"></i>
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- product 4 -->
-      <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-        <div class="product-item d-flex flex-column bg-white rounded overflow-hidden h-100">
-          <div class="text-center p-4">
-            <div class="d-inline-block border border-primary rounded-pill pt-1 px-3 mb-3">
-              Rp18.000
-            </div>
-            <h3 class="mb-3">Cinnamon Roll</h3>
-          </div>
-          <div class="position-relative mt-auto">
-            <img class="img-fluid" src="img/cinnamon.png" alt="" />
-            <div class="product-overlay">
-              <a class="btn btn-lg-square btn-outline-light rounded-circle add-to-cart" href="#" data-price="18.000">
-                <i class="fa fa-cart-plus text-primary"></i>
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- row 2 -->
-    <div class="row">
-      <!-- product 5 -->
-      <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-        <div class="product-item d-flex flex-column bg-white rounded overflow-hidden h-100">
-          <div class="text-center p-4">
-            <div class="d-inline-block border border-primary rounded-pill px-3 mb-3">
-              Rp20.000
-            </div>
-            <h3 class="mb-3">Apple Pie</h3>
-          </div>
-          <div class="position-relative mt-auto">
-            <img class="img-fluid" src="img/apple.png" alt="" />
-            <div class="product-overlay">
-              <a class="btn btn-lg-square btn-outline-light rounded-circle add-to-cart" href="#" data-price="20.000">
-                <i class="fa fa-cart-plus text-primary"></i>
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- product 6 -->
-      <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-        <div class="product-item d-flex flex-column bg-white rounded overflow-hidden h-100">
-          <div class="text-center p-4">
-            <div class="d-inline-block border border-primary rounded-pill pt-1 px-3 mb-3">
-              Rp17.000
-            </div>
-            <h3 class="mb-3">Matcha Latte</h3>
-          </div>
-          <div class="position-relative mt-auto">
-            <img class="img-fluid" src="img/latte.png" alt="" />
-            <div class="product-overlay">
-              <a class="btn btn-lg-square btn-outline-light rounded-circle add-to-cart" href="#" data-price="17.000">
-                <i class="fa fa-cart-plus text-primary"></i>
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- product 7 -->
-      <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-        <div class="product-item d-flex flex-column bg-white rounded overflow-hidden h-100">
-          <div class="text-center p-4">
-            <div class="d-inline-block border border-primary rounded-pill pt-1 px-3 mb-3">
-              Rp22.000
-            </div>
-            <h3 class="mb-3">Tuna Cheese Puff</h3>
-          </div>
-          <div class="position-relative mt-auto">
-            <img class="img-fluid" src="img/tuna.png" alt="" />
-            <div class="product-overlay">
-              <a class="btn btn-lg-square btn-outline-light rounded-circle add-to-cart" href="#" data-price="22.000">
-                <i class="fa fa-cart-plus text-primary"></i>
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- product 8 -->
-      <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-        <div class="product-item d-flex flex-column bg-white rounded overflow-hidden h-100">
-          <div class="text-center p-4">
-            <div class="d-inline-block border border-primary rounded-pill pt-1 px-3 mb-3">
-              Rp15.000
-            </div>
-            <h3 class="mb-3">Coffee Bun Bread</h3>
-          </div>
-          <div class="position-relative mt-auto">
-            <img class="img-fluid" src="img/coffee-bun.png" alt="" />
-            <div class="product-overlay">
-              <a class="btn btn-lg-square btn-outline-light rounded-circle add-to-cart" href="#" data-price="15.000">
-                <i class="fa fa-cart-plus text-primary"></i>
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+        <?php
+    }
+} else {
+    echo "No products found";
+}
+$conn->close();
+?>
+</div>
   </div>
 </div>
-
     <!-- Product End -->
 
     <!-- Modal -->
@@ -295,7 +177,7 @@
       </div>
       <div class="modal-body">
         <!-- Isi form checkout di sini -->
-        <form action="checkout.php" method="POST">
+        <form action="checkout.php" method="POST" id="checkoutForm">
         <div class="mb-3">
             <label for="current-time" class="form-label">Current Time</label>
             <input type="text" class="form-control" id="current-time" name="current-time" readonly>
@@ -332,7 +214,7 @@
             </select>
           </div>
           <!-- Tambahkan elemen form lainnya seperti nomor hp, alamat, dll. -->
-          <button type="submit" class="btn btn-primary">Submit</button>
+          <button type="submit" class="btn btn-primary checkoutForm" id="checkoutForm">Submit</button>
         </form>
       </div>
     </div>
