@@ -104,12 +104,13 @@
                     <th scope="col">Product Name</th>
                     <th scope="col">Price</th>
                     <th scope="col">Quantity</th>
+                    <th scope="col">Action</th>
                 </tr>
             </thead>
             <tbody>
             <?php
             require_once 'conn.php';
-            $sql = "SELECT Name_Product, Price, qty FROM product";
+            $sql = "SELECT id, Name_Product, Price, qty FROM product";
             $result = $conn->query($sql);
                 if ($result->num_rows > 0) {
                     while($row = $result->fetch_assoc()) {
@@ -117,6 +118,13 @@
                         echo "<td>" . $row["Name_Product"] . "</td>";
                         echo "<td>" . $row["Price"] . "</td>";
                         echo "<td>" . $row["qty"] . "</td>";
+                        echo "<td>
+                                    <form action='delete-product.php' method='POST' onsubmit='return confirm(\"Are you sure you want to delete this product?\");'>
+                                        <input type='hidden' name='deleteProductId' value='" . $row["id"] . "' />
+                                        <button type='submit' class='btn btn-danger btn-sm'>Delete</button>
+                                    </form>
+                                  </td>";
+                            echo "</tr>";
                         echo "</tr>";
                     }
                 } else {
