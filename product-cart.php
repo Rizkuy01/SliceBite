@@ -209,9 +209,9 @@ $conn->close();
           <div class="mb-3">
             <label for="payment" class="form-label">Payment Method</label>
             <select class="form-select" id="payment" name="payment" required>
-              <option value="bank">Bank Transfer</option>
-              <option value="gopay">GoPay</option>
-              <option value="dana">DANA</option>
+              <option value="Transfer Bank">Bank Transfer</option>
+              <option value="GoPay">GoPay</option>
+              <option value="Dana">DANA</option>
             </select>
           </div>
           <!-- Tambahkan elemen form lainnya seperti nomor hp, alamat, dll. -->
@@ -294,7 +294,7 @@ $(document).ready(function () {
         }).then(function(response) {
             if (response.ok) {
                 // Redirect to checkout-success.php on successful form submission
-                window.location.href = 'checkout-success.php';
+                window.location.href = 'qr.php';
             } else {
                 return response.text().then(function(text) { throw new Error(text) });
             }
