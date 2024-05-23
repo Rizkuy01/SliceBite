@@ -2,13 +2,14 @@
 <html lang="en">
     <head>
         <meta charset="utf-8" />
-        <title>SliceBite | Team 3</title>
+        <title>Transaction Dashboard | SliceBite</title>
         <meta content="width=device-width, initial-scale=1.0" name="viewport" />
         <meta content="" name="keywords" />
         <meta content="" name="description" />
 
         <!-- Favicon -->
         <link href="img/favicon.ico" rel="icon" />
+        <link href="img/logo.png" rel="icon" type="image/png" />
 
         <!-- Google Web Fonts -->
         <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -101,12 +102,13 @@
                     <th scope="col">Total Price</th>
                     <th scope="col">Address</th>
                     <th scope="col">Via</th>
+                    <th scope="col">Action</th>
                 </tr>
             </thead>
             <tbody>
             <?php
             require_once 'conn.php';
-            $sql = "SELECT time, name, product, price, address, payment FROM checkout";
+            $sql = "SELECT id, time, name, product, price, address, payment FROM checkout";
             $result = $conn->query($sql);
                 if ($result->num_rows > 0) {
                     while($row = $result->fetch_assoc()) {
@@ -117,6 +119,13 @@
                         echo "<td>" . $row["price"] . "</td>";
                         echo "<td>" . $row["address"] . "</td>";
                         echo "<td>" . $row["payment"] . "</td>";
+                        echo "<td>
+                                    <form action='delete-trans.php' method='POST' onsubmit='return confirm(\"Are you sure you want to delete this transaction?\");'>
+                                        <input type='hidden' name='deleteTransId' value='" . $row["id"] . "' />
+                                        <button type='submit' class='btn btn-danger btn-sm'>Delete</button>
+                                    </form>
+                                  </td>";
+                            echo "</tr>";
                         echo "</tr>";
                     }
                 } else {

@@ -9,6 +9,8 @@
 
     <!-- Favicon -->
     <link href="img/favicon.ico" rel="icon" />
+    <link href="img/logo.png" rel="icon" type="image/png" />
+
 
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />

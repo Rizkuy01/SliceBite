@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <title>My Cart | SliceBite</title>
+    <title>Shop Now | SliceBite</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <meta content="" name="keywords" />
     <meta content="" name="description" />
@@ -10,6 +10,7 @@
     <!-- Favicon -->
     <link href="img/favicon.ico" rel="icon" />
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <link href="img/logo.png" rel="icon" type="image/png" />
 
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -279,6 +280,30 @@ $(document).ready(function () {
 
     // Memanggil fungsi updateCurrentTime setiap detik
     setInterval(updateCurrentTime, 1000);
+
+    // redirect after checkout
+    document.getElementById('checkoutForm').addEventListener('submit', function(event) {
+        event.preventDefault(); // Mencegah form dikirim secara default
+
+        var form = this;
+        var formData = new FormData(form);
+
+        fetch(form.action, {
+            method: form.method,
+            body: formData
+        }).then(function(response) {
+            if (response.ok) {
+                // Redirect to checkout-success.php on successful form submission
+                window.location.href = 'checkout-success.php';
+            } else {
+                return response.text().then(function(text) { throw new Error(text) });
+            }
+        }).catch(function(error) {
+            // Handle error
+            console.error('Error:', error);
+            alert('There was an error submitting the form. Please try again.');
+        });
+    });
   });
 
 </script>
