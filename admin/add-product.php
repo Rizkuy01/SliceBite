@@ -1,19 +1,21 @@
 <?php
-require_once 'conn.php';
+require_once '../conn.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Mendapatkan data dari form
+    // Form Data
     $productName = $_POST['productName'];
     $productPrice = $_POST['productPrice'];
     $productQuantity = $_POST['productQuantity'];
+    $productDesc = $_POST['productDesc'];
+    $productVariant = $_POST['productVariant'];
 
-    // Mengupload file gambar
-    $target_dir = "uploads/";
+    // Upload File
+    $target_dir = "../uploads/";
     $target_file = $target_dir . basename($_FILES["productImage"]["name"]);
     $uploadOk = 1;
     $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
 
-    // Periksa apakah file gambar adalah gambar asli atau palsu
+    // Crosscheck 1
     $check = getimagesize($_FILES["productImage"]["tmp_name"]);
     if($check !== false) {
         $uploadOk = 1;
@@ -22,7 +24,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $uploadOk = 0;
     }
 
-    // Periksa apakah file sudah ada
+    // Crosscheck 2
     if (file_exists($target_file)) {
         echo "Sorry, file already exists.";
         $uploadOk = 0;
@@ -47,12 +49,27 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Jika semua sudah baik, coba upload file
     } else {
         if (move_uploaded_file($_FILES["productImage"]["tmp_name"], $target_file)) {
-            // Siapkan query untuk memasukkan data ke database
-            $sql = "INSERT INTO product (Name_Product, Price, qty, image)
-                    VALUES ('$productName', '$productPrice', '$productQuantity', '$target_file')";
+            // Query SQL ke Database
+            $sql = "INSERT INTO 
+            product (
+                Name_Product, 
+                Price, 
+                qty, 
+                image,
+                description,
+                variant) 
+        VALUES (
+            '$productName', 
+            '$productPrice', 
+            '$productQuantity', 
+            '$target_file',
+            '$productDesc',
+            '$productVariant'
+        )";
+
 
             if ($conn->query($sql) === TRUE) {
-                // Redirect ke halaman product-cart.php
+                // Redirect ke product-dashboard.php
                 header("Location: product-dashboard.php");
                 exit();
             } else {

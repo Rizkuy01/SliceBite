@@ -77,7 +77,7 @@
           <a href="#contact" class="nav-item nav-link">Contact</a>
         </div>
         <a
-          href="product-cart.php"
+          href="app/product-cart.php"
           class="nav-item nav-link d-flex align-items-center"
         >
           <i class="fas fa-shopping-cart"></i> Cart
@@ -102,7 +102,7 @@
                   <p class="text-light fs-5 mb-4 pb-3">
                     Where every bite is a journey and every crumb tells a story.
                   </p>
-                  <a href="" class="btn btn-primary rounded-pill py-3 px-5"
+                  <a href="#about" class="btn btn-primary rounded-pill py-3 px-5"
                     >Read More</a
                   >
                 </div>
@@ -157,7 +157,7 @@
                   <i class="fa fa-check text-primary me-2"></i>Many more
                 </div>
               </div>
-              <a class="btn btn-primary rounded-pill py-3 px-5" href=""
+              <a class="btn btn-primary rounded-pill py-3 px-5" href="app/app/product-cart.php"
                 >Order Now</a
               >
             </div>
@@ -189,17 +189,16 @@
                   Rp25.000
                 </div>
                 <h3 class="mb-3">Cromboloni</h3>
-                <span
-                  >Tempor erat elitr rebum at clita dolor diam ipsum sit diam
-                  amet diam et eos</span
-                >
+                <span>
+                  A delightful pastry that combines the rich, flaky layers of a croissant with delightful Italian dessert fillings.
+                </span>
               </div>
               <div class="position-relative mt-auto">
                 <img class="img-fluid" src="img/cromboloni.png" alt="" />
                 <div class="product-overlay">
                   <a
                     class="btn btn-lg-square btn-outline-light rounded-circle"
-                    href="product-cart.php"
+                    href="app/product-cart.php"
                     data-price="25.000"
                     ><i class="fa fa-eye text-primary"></i
                   ></a>
@@ -219,16 +218,15 @@
                 </div>
                 <h3 class="mb-3">Croissant</h3>
                 <span
-                  >Tempor erat elitr rebum at clita dolor diam ipsum sit diam
-                  amet diam et eos</span
-                >
+                  >A classic French pastry with a flaky, buttery crust and a soft.
+                </span>
               </div>
               <div class="position-relative mt-auto">
                 <img class="img-fluid" src="img/croissant.png" alt="" />
                 <div class="product-overlay">
                   <a
                     class="btn btn-lg-square btn-outline-light rounded-circle"
-                    href="product-cart.php"
+                    href="app/product-cart.php"
                     data-price="18.000"
                     ><i class="fa fa-eye text-primary"></i
                   ></a>
@@ -247,17 +245,16 @@
                   Rp20.000
                 </div>
                 <h4 class="mb-3">Croffle</h4>
-                <span
-                  >Tempor erat elitr rebum at clita dolor diam ipsum sit diam
-                  amet diam et eos</span
-                >
+                <span>
+                  Delicious fusion of croissant and waffle, offering a crispy outside, and soft inside. Made from croissant dough.
+                </span>
               </div>
               <div class="position-relative mt-auto">
                 <img class="img-fluid" src="img/croffle.png" alt="" />
                 <div class="product-overlay">
                   <a
                     class="btn btn-lg-square btn-outline-light rounded-circle"
-                    href="product-cart.php"
+                    href="app/product-cart.php"
                     data-price="20.000"
                     ><i class="fa fa-eye text-primary"></i
                   ></a>

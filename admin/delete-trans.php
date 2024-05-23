@@ -1,5 +1,5 @@
 <?php
-require_once 'conn.php';
+require_once '../conn.php';
 
 if (isset($_POST['deleteTransId'])) {
     $productId = $_POST['deleteTransId'];
@@ -22,4 +22,3 @@ if (isset($_POST['deleteTransId'])) {
 }
 header("Location: transaction-dashboard.php");
 exit();
-?>

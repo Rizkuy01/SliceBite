@@ -2,15 +2,14 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <title>THANK YOU!</title>
+    <title>Admin | SliceBite</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <meta content="" name="keywords" />
     <meta content="" name="description" />
 
     <!-- Favicon -->
-    <link href="img/favicon.ico" rel="icon" />
+    <link href="../img/favicon.ico" rel="icon" />
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
-    <link href="img/logo.png" rel="icon" type="image/png" />
 
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -31,26 +30,17 @@
     />
 
     <!-- Libraries Stylesheet -->
-    <link href="lib/animate/animate.min.css" rel="stylesheet" />
-    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet" />
+    <link href="../lib/animate/animate.min.css" rel="stylesheet" />
+    <link href="../lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet" />
 
     <!-- Customized Bootstrap Stylesheet -->
-    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <link href="../css/bootstrap.min.css" rel="stylesheet" />
 
     <!-- Template Stylesheet -->
-    <link href="css/style.css" rel="stylesheet" />
+    <link href="../css/style.css" rel="stylesheet" />
   </head>
 
   <body>
-    <!-- Spinner Start -->
-    <div
-      id="spinner"
-      class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center"
-    >
-      <div class="spinner-grow text-primary" role="status"></div>
-    </div>
-    <!-- Spinner End -->
-
     <!-- Navbar Start -->
     <nav
       class="navbar navbar-expand-lg navbar-dark fixed-top py-lg-0 px-lg-5 wow fadeIn"
@@ -86,7 +76,7 @@
     >
       <div class="container text-center pt-5 pb-3">
         <h1 class="display-4 text-white animated slideInDown mb-3">
-          THANK YOU!
+          ADMIN PAGE
         </h1>
       </div>
     </div>
@@ -98,10 +88,18 @@
         <div class="col-lg-4 mb-4">
           <div class="card text-center h-100">
             <div class="card-body">
-              <i class="bi bi-check-circle display-1 text-success"></i>
-              <h5 class="card-title mt-3">Terimakasih!</h5>
-              <p class="card-text">Pesanan anda akan segera di proses.</p>
-              <a href="product-cart.php" class="btn btn-primary mt-2">Kembali belanja</a>
+              <i class="bi bi-box-seam display-1 text-primary"></i>
+              <h5 class="card-title mt-3">Product Dashboard</h5>
+              <a href="product-dashboard.php" class="btn btn-primary mt-2">Go to Product Dashboard</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 mb-4">
+          <div class="card text-center h-100">
+            <div class="card-body">
+              <i class="bi bi-receipt display-1 text-primary"></i>
+              <h5 class="card-title mt-3">Transaction Dashboard</h5>
+              <a href="transaction-dashboard.php" class="btn btn-primary mt-2">Go to Transaction Dashboard</a>
             </div>
           </div>
         </div>
@@ -136,7 +134,7 @@
     <script src="lib/counterup/counterup.min.js"></script>
     <script src="lib/owlcarousel/owl.carousel.min.js"></script>
 
-    <!--File Javascript -->
+    <!--File JavaScript -->
     <script src="js/main.js"></script>
   </body>
 </html>

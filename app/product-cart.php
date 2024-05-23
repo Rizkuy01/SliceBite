@@ -8,9 +8,9 @@
     <meta content="" name="description" />
 
     <!-- Favicon -->
-    <link href="img/favicon.ico" rel="icon" />
+    <link href="../img/favicon.ico" rel="icon" />
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
-    <link href="img/logo.png" rel="icon" type="image/png" />
+    <link href="../img/logo.png" rel="icon" type="image/png" />
 
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -31,25 +31,17 @@
     />
 
     <!-- Libraries Stylesheet -->
-    <link href="lib/animate/animate.min.css" rel="stylesheet" />
-    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet" />
+    <link href="../lib/animate/animate.min.css" rel="stylesheet" />
+    <link href="../lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet" />
 
     <!-- Customized Bootstrap Stylesheet -->
-    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <link href="../css/bootstrap.min.css" rel="stylesheet" />
 
     <!-- Template Stylesheet -->
-    <link href="css/style.css" rel="stylesheet" />
+    <link href="../css/style.css" rel="stylesheet" />
   </head>
 
   <body>
-    <!-- Spinner Start -->
-    <div
-      id="spinner"
-      class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center"
-    >
-      <div class="spinner-grow text-primary" role="status"></div>
-    </div>
-    <!-- Spinner End -->
 
     <!-- Navbar Start -->
     <nav
@@ -99,71 +91,52 @@
     <!-- Page Header End -->
 
     <!-- Product Start -->
-    <div class="container-xxl bg-light my-6 py-6 pt-0" id="product">
+<div class="container-xxl bg-light my-6 py-6 pt-0" id="product">
   <div class="container">
-    <div class="row justify-content-center">
-
-      <!-- Cart Section -->
-      <!-- <div class="col-lg-6 mt-4">
-        <div class="card mb-5">
-          <div class="card-header">Shopping Cart</div>
-          <div class="card-body">
-            <ul id="cart-items" class="list-group"></ul>
-            <p>Total: <span id="cart-total">0</span></p>
-            <a class="btn btn-primary btn-block checkout" href="#">
-              Checkout
-            </a>
-          </div>
-        </div>
-      </div> -->
-      <!-- Cart End -->
-      
-    </div>
-
     <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 500px">
       <h1 class="display-8 mb-4 pt-4">Our Product</h1>
     </div>
 
     <?php
-require_once 'conn.php';
+    require_once '../conn.php';
 
-// Query untuk mengambil data produk
-$sql = "SELECT Name_Product, Price, qty, image FROM product";
-$result = $conn->query($sql);
-?>
+    // Query untuk mengambil data produk
+    $sql = "SELECT Name_Product, Price, qty, image FROM product";
+    $result = $conn->query($sql);
+    ?>
 
-<div class="row">
-<?php
-if ($result->num_rows > 0) {
-    // Output data dari setiap baris
-    while($row = $result->fetch_assoc()) {
-        ?>
-        <div class="col-lg-3 col-md-6 wow fadeInUp pb-lg-4" data-wow-delay="0.1s">
-            <div class="product-item d-flex flex-column bg-white rounded overflow-hidden h-100">
-                <div class="text-center p-4">
-                  <h3 class="mb-3"><?php echo htmlspecialchars($row["Name_Product"]); ?></h3>
-                    <div class="d-inline-block border border-primary rounded-pill px-3 mb-3">
-                        Rp<?php echo number_format($row["Price"], 0, ',', '.'); ?>
+    <div class="row">
+    <?php
+    if ($result->num_rows > 0) {
+        // Output data dari setiap baris
+        while($row = $result->fetch_assoc()) {
+            ?>
+            <div class="col-lg-3 col-md-6 wow fadeInUp pb-lg-4" data-wow-delay="0.1s">
+                <div class="product-item d-flex flex-column bg-white rounded overflow-hidden h-100">
+                    <div class="text-center p-4">
+                      <h3 class="mb-3"><?php echo htmlspecialchars($row["Name_Product"]); ?></h3>
+                        <div class="d-inline-block border border-primary rounded-pill px-3 mb-3">
+                            Rp<?php echo number_format($row["Price"], 0, ',', '.'); ?>
+                        </div>
                     </div>
-                </div>
-                <div class="position-relative mt-auto">
-                    <img class="img-fluid" src="<?php echo htmlspecialchars($row["image"]); ?>" alt="<?php echo htmlspecialchars($row["Name_Product"]); ?>" />
-                    <div class="product-overlay">
-                        <a class="btn btn-lg-square btn-outline-light rounded-circle add-to-cart" href="#" data-price="<?php echo number_format($row["Price"], 0, ',', '.'); ?>">
-                            <i class="fa fa-cart-plus text-primary"></i>
-                        </a>
+                    <div class="position-relative mt-auto">
+                        <img class="img-fluid" src="../<?php echo htmlspecialchars($row["image"]); ?>" alt="<?php echo htmlspecialchars($row["Name_Product"]); ?>" />
+                        <div class="product-overlay">
+                            <a class="btn btn-lg-square btn-outline-light rounded-circle add-to-cart" href="#" data-price="<?php echo number_format($row["Price"], 0, ',', '.'); ?>">
+                                <i class="fa fa-cart-plus text-primary"></i>
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <?php
+            <?php
+        }
+    } else {
+        echo "No products found";
     }
-} else {
-    echo "No products found";
-}
-$conn->close();
-?>
-</div>
+    $conn->close();
+    ?>
+    </div>
   </div>
 </div>
     <!-- Product End -->
@@ -244,71 +217,65 @@ $conn->close();
     <!-- JavaScript Libraries -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="lib/wow/wow.min.js"></script>
-    <script src="lib/easing/easing.min.js"></script>
-    <script src="lib/waypoints/waypoints.min.js"></script>
-    <script src="lib/counterup/counterup.min.js"></script>
-    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="../lib/wow/wow.min.js"></script>
+    <script src="../lib/easing/easing.min.js"></script>
+    <script src="../lib/waypoints/waypoints.min.js"></script>
+    <script src="../lib/counterup/counterup.min.js"></script>
+    <script src="../lib/owlcarousel/owl.carousel.min.js"></script>
 
+    <!-- JavaScript function -->
     <script>
-$(document).ready(function () {
-  // Tangani klik tombol "Tambahkan ke Keranjang"
-  $('.add-to-cart').click(function () {
-      // Dapatkan nama produk yang dipilih
-      var productName = $(this).closest('.product-item').find('h3').text();
-      // Dapatkan harga produk yang dipilih (misalnya dari data-price attribute)
-      var productPrice = $(this).data('price');
-      // Isi input tersembunyi dengan nama produk yang dipilih
-      $('#product-name').val(productName);
-      // Isi input tersembunyi dengan harga produk yang dipilih
-      $('#price').val(productPrice);
-      // Tampilkan modal checkout
-      $('#checkoutModal').modal('show');
-    });
+      $(document).ready(function () {
+        // Data produk otomatis terisi pada form checkout
+        $('.add-to-cart').click(function () {
+            // Dapatkan nama produk yang dipilih
+            var productName = $(this).closest('.product-item').find('h3').text();
+            // Dapatkan harga produk yang dipilih
+            var productPrice = $(this).data('price');
+            // Isi input tersembunyi dengan nama produk yang dipilih
+            $('#product-name').val(productName);
+            // Isi input tersembunyi dengan harga produk yang dipilih
+            $('#price').val(productPrice);
+            // Tampilkan modal checkout
+            $('#checkoutModal').modal('show');
+          });
 
-    // Fungsi untuk memperbarui waktu setiap detik
-    function updateCurrentTime() {
-      var currentTime = new Date();
+          // Set waktu realtime
+          function updateCurrentTime() {
+            var currentTime = new Date();
+            var formattedTime = currentTime.getDate() + "-" + (currentTime.getMonth() + 1) + "-" + currentTime.getFullYear() + " " +
+                                currentTime.getHours() + ":" + currentTime.getMinutes() + ":" + currentTime.getSeconds();
+            $("#current-time").val(formattedTime);
+          }
+          setInterval(updateCurrentTime, 1000);
 
-      // Format waktu dengan tanggal, bulan, tahun, jam, menit, dan detik
-      var formattedTime = currentTime.getDate() + "-" + (currentTime.getMonth() + 1) + "-" + currentTime.getFullYear() + " " +
-                          currentTime.getHours() + ":" + currentTime.getMinutes() + ":" + currentTime.getSeconds();
+          // Redirect page
+          document.getElementById('checkoutForm').addEventListener('submit', function(event) {
+              event.preventDefault();
 
-      // Masukkan waktu ke dalam input dengan id "current-time"
-      $("#current-time").val(formattedTime);
-    }
+              var form = this;
+              var formData = new FormData(form);
 
-    // Memanggil fungsi updateCurrentTime setiap detik
-    setInterval(updateCurrentTime, 1000);
-
-    // redirect after checkout
-    document.getElementById('checkoutForm').addEventListener('submit', function(event) {
-        event.preventDefault(); // Mencegah form dikirim secara default
-
-        var form = this;
-        var formData = new FormData(form);
-
-        fetch(form.action, {
-            method: form.method,
-            body: formData
-        }).then(function(response) {
-            if (response.ok) {
-                // Redirect to checkout-success.php on successful form submission
-                window.location.href = 'qr.php';
-            } else {
-                return response.text().then(function(text) { throw new Error(text) });
-            }
-        }).catch(function(error) {
-            // Handle error
-            console.error('Error:', error);
-            alert('There was an error submitting the form. Please try again.');
+              fetch(form.action, {
+                  method: form.method,
+                  body: formData
+              }).then(function(response) {
+                  if (response.ok) {
+                      // Redirect ke payment page
+                      window.location.href = 'qr.php';
+                  } else {
+                      return response.text().then(function(text) { throw new Error(text) });
+                  }
+              }).catch(function(error) {
+                  // Handle error
+                  console.error('Error:', error);
+                  alert('There was an error submitting the form. Please try again.');
+              });
+          });
         });
-    });
-  });
+    </script>
 
-</script>
-
-    <!--File Javascript -->
+    <!--File JavaScript -->
     <script src="js/main.js"></script>
   </body>
 </html>
