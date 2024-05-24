@@ -13,7 +13,7 @@ if (isset($_POST['id'])) {
         $row = $result->fetch_assoc();
         echo "<div class='row'>
                 <div class='col-md-6'>
-                    <img src='../" . htmlspecialchars($row['image']) . "' alt='Product Image' class='img-fluid'>
+                    <img src='../img/about-1.jpg" . htmlspecialchars($row['image']) . "' alt='Product Image' class='img-fluid'>
                 </div>
                 <div class='col-md-6'>
                     <h5>" . htmlspecialchars($row['Name_Product']) . "</h5>
