@@ -157,7 +157,7 @@
                   <i class="fa fa-check text-primary me-2"></i>Many more
                 </div>
               </div>
-              <a class="btn btn-primary rounded-pill py-3 px-5" href="app/app/product-cart.php"
+              <a class="btn btn-primary rounded-pill py-3 px-5" href="app/product-cart.php"
                 >Order Now</a
               >
             </div>
@@ -468,22 +468,29 @@
               <h1 class="display-4 text-light mb-0">Contact Us</h1>
             </div>
             <div class="col-md-6 text-md-end">
-              <div class="position-relative">
-                <input
-                  class="form-control bg-transparent border-light w-100 py-3 ps-4 pe-5"
-                  type="text"
-                  placeholder="Your message"
-                />
-                <button
-                  type="button"
-                  class="btn btn-dark py-2 px-3 position-absolute top-0 end-0 mt-2 me-2"
-                >
-                  Submit
-                </button>
-              </div>
+              <form id="contactForm" action="https://getform.io/f/zbzkdvna" method="POST">
+                <div class="position-relative">
+                  <input
+                      id="name"
+                      type="text"
+                      name="name"
+                      placeholder="Enter your message"
+                      data-sb-validations="required"
+                      class="form-control bg-transparent border-light w-100 py-3 ps-4 pe-5"
+                  />
+                  <button
+                    type="submit"
+                    id="submitButton"
+                    class="btn btn-dark py-2 px-3 position-absolute top-0 end-0 mt-2 me-2"
+                  >
+                    Submit
+                  </button>
+                </div>
+              </form>
             </div>
           </div>
         </div>
+        <!-- Form end -->
       </div>
     </div>
     <!-- Testimonial End -->
