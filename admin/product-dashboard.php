@@ -212,7 +212,7 @@
     <script>
         $(document).ready(function() {
             $('#table-product').DataTable({
-                "pageLength": 8
+                "pageLength": 5
             });
 
             $('#detailsModal').on('show.bs.modal', function (event) {

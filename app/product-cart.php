@@ -170,11 +170,11 @@
           </div>
           <div class="mb-3">
             <label for="product-name" class="form-label">Product</label>
-            <input type="text" class="form-control" id="product-name" name="product-name" required>
+            <input type="text" class="form-control" id="product-name" name="product-name" required readonly>
           </div>
           <div class="mb-3">
             <label for="price" class="form-label">Price</label>
-            <input type="text" class="form-control" id="price" name="price" required>
+            <input type="text" class="form-control" id="price" name="price" required readonly>
           </div>
 
           <input type="hidden" id="product" name="product">
