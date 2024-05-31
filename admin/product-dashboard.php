@@ -195,7 +195,7 @@
             </div>
             <div class="modal-body">
                 <div id="productDetails">
-                    <!-- Content will be loaded dynamically using JavaScript -->
+                    <!-- fetch data details -->
                 </div>
             </div>
         </div>

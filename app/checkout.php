@@ -9,7 +9,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $price    = $_POST["price"];
   $time     = $_POST["current-time"];
 
-  // LMySQLi
+  // MySQLi
   $servername = "localhost";
   $username = "root";
   $password = "";

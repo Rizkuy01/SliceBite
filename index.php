@@ -418,7 +418,7 @@
             </div>
             <p class="mb-0">
               Cromboloni nya sangat enak, saya suka dengan rasa Matcha nya,
-              apalagi dimakan bersama di rooftop Technomart.
+              sangat match dengan original matcha khas Jepang.
             </p>
           </div>
           <div class="testimonial-item bg-white rounded p-4">

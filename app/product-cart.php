@@ -261,7 +261,7 @@
                   body: formData
               }).then(function(response) {
                   if (response.ok) {
-                      // Redirect ke payment page
+                      // Redirect ke qr payment page
                       window.location.href = 'qr.php';
                   } else {
                       return response.text().then(function(text) { throw new Error(text) });
