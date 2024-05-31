@@ -98,7 +98,9 @@
         <div class="col-lg-4 mb-4">
           <div class="card text-center h-100 card-double-size">
             <div class="card-body">
-              <img src="../img/qr-code.png" alt="QR Code" class="img-fluid" style="max-width: 100px;"/>
+            <a href="payment.php">
+                <img src="../img/qr-code.png" alt="QR Code" class="img-fluid" style="max-width: 100px;" />
+              </a>
               <h5 class="card-title mt-3">Scan Me</h5>
               <p class="card-text">Pesanan akan otomatis dibuat setelah payment.</p>
             </div>
